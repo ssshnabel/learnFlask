@@ -1,0 +1,23 @@
+<html>
+	<body>
+	<h3>{{ cur_datetime }}</h3>
+	<br>
+	<h3>Last cristmas message:</h3>
+	{% if nick %}
+		<b>{{ nick }} says:</b>
+	{% endif %}
+	{% if message %} 
+		<p>{{ message }}</p>
+	{% else %}
+		<p>This wall is empty</p>
+	{% endif %}
+	<br>
+	<b>New wall message:</b>
+	<form method="POST" action="/wall">
+		Nick: <input type="text" name="nick" required><br>
+		Message: <input type="text" name="message" required><br>
+		<input type="submit" value="Send">
+	</form>
+	</body>
+</html>
+ 
